@@ -1,9 +1,12 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
 import { auth } from '../../firebase/firebase.init';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Register = () => {
+    const userInfo = use(AuthContext)
+    console.log(userInfo);
 
     const handleRegister = (e) => {
         e.preventDefault();

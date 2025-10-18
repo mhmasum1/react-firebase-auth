@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Login = () => {
     const handleLogin = (e) => {
@@ -9,6 +10,8 @@ const Login = () => {
         const password = e.target.password.value;
         console.log(email, password);
     }
+    const userInfo = use(AuthContext)
+    console.log(userInfo);
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
